@@ -1,0 +1,6 @@
+/home/erik/IdeaProjects/com.astontech.hr.final.lab/target/
+.idea
+*.iws
+*.iml
+*.ipr
+.mvn/wapper/maven-wrapper.jar
