@@ -120,7 +120,5 @@ public class Vehicle {
                 '}';
     }
 
-    public VehicleModel findVehicleModelByVehicleId(int id) {
 
-    }
 }
