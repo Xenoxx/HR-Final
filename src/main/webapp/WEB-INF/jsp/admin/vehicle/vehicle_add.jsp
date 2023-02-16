@@ -119,25 +119,20 @@
 
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="inputNewVehicle" class="col-lg-2 control-label">Vin</label>
                         <div class="col-lg-10">
                             <form:input path="vehicle.vin" class="form-contorl" rows="3" id="inputNewVehicle"
                                         placeholder="Vin"></form:input>
-
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="inputNewVehicle" class="col-lg-2 control-label">Year</label>
                         <div class="col-lg-10">
                             <form:input path="vehicle.year" class="form-contorl" rows="3" id="inputNewVehicle"
                                         placeholder="Year"></form:input>
-
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="inputNewVehicle" class="col-lg-2 control-label">Price</label>
                         <div class="col-lg-10">
@@ -146,7 +141,6 @@
 
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="inputNewVehicle" class="col-lg-2 control-label">Purchase Date</label>
                         <div class="col-lg-10">
@@ -155,43 +149,31 @@
 
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="inputNewVehicle" class="col-lg-2 control-label">Sold</label>
                         <div class="col-lg-10">
                             <form:input path="vehicle.sold" class="form-contorl" rows="3" id="inputNewVehicle"
                                         placeholder="True/False"></form:input>
-
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="inputNewVehicle" class="col-lg-2 control-label">License Plate</label>
                         <div class="col-lg-10">
                             <form:input path="vehicle.licensePlate" class="form-contorl" rows="3" id="inputNewVehicle"
                                         placeholder="License Plate"></form:input>
-
                         </div>
                     </div>
-
-
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                             <form:button type="reset" value="cancel" class="btn btn-default">Cancel</form:button>
                             <form:button type="submit" value="save" class="btn btn-primary">Save</form:button>
-
                         </div>
                     </div>
-
-
                 </fieldset>
             </form:form>
 
         </div>
-
-
     </div>
-
 </div>
 
 

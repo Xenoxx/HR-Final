@@ -158,6 +158,7 @@ public class AdminController {
 
     @RequestMapping(value = "/admin/vehicle/vehicleedit/{id}", method = RequestMethod.GET)
     public String vehicleEdit(@PathVariable int id, Model model) {
+
         Vehicle vehicle = vehicleService.getVehicleById(id);
 
         model.addAttribute("vehicle", vehicle);
@@ -167,11 +168,12 @@ public class AdminController {
     @RequestMapping(value = "/admin/vehicle/updatevehicle", method = RequestMethod.POST)
     public String vehicleUpdate(Vehicle vehicle,
                                 Model model) {
-
-        vehicleService.saveVehicle(vehicle);
-
+        if(vehicleService.findVehicleByVin(vehicle.getVin()) != null){
+            return "redirect:/admin/vehicle/vehicleedit/" + vehicle.getId();
+        } else {
+            vehicleService.saveVehicle(vehicle);
+        }
         return "redirect:/admin/vehicle/vehicleedit/" + vehicle.getId();
-
     }
 
     @RequestMapping(value = "/admin/vehicle/vehicledelete/{id}", method = RequestMethod.GET)

@@ -21,6 +21,7 @@ public class Vehicle {
     private Boolean sold;
     private String licensePlate;
 
+
     public Vehicle(){}
     public Vehicle(String vin){
         this.vin = vin;
