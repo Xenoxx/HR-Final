@@ -21,6 +21,8 @@
                     <th>Price</th>
                     <th>Sold</th>
                     <th>Purchase date</th>
+                    <th>Model</th>
+                    <th>Make</th>
 
 
                     <th>Edit</th>
@@ -37,6 +39,8 @@
                         <td>${vehicle.price}</td>
                         <td>${vehicle.sold}</td>
                         <td>${vehicle.purchaseDate}</td>
+                        <td>${vehicle.vehicleModel}</td>
+                        <td>${vehicle.vehicleMake}</td>
                         <td><a href="/admin/vehicle/vehicleedit/${vehicle.id}">Edit</a></td>
                         <td><a href="/admin/vehicle/vehicledelete/${vehicle.id}">Delete</a></td>
                     </tr>

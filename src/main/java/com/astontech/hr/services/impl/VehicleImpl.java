@@ -37,4 +37,13 @@ public class VehicleImpl implements VehicleService {
         return vehicleRepository.findVehicleByVin(vin);
     }
 
+    @Override
+    public String findVehicleModelByVehicleId(Integer id) {
+        return vehicleRepository.findVehicleModelByVehicleId(id);
+    }
+
+    @Override
+    public String findVehicleMakeByVehicleId(Integer id) {
+        return vehicleRepository.findVehicleMakeByVehicleId(id);
+    }
 }

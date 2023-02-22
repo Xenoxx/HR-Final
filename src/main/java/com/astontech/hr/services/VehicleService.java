@@ -14,4 +14,8 @@ public interface VehicleService {
 
     void deleteVehicle(Integer id);
 
+    String findVehicleModelByVehicleId(Integer id);
+
+    String findVehicleMakeByVehicleId(Integer id);
+
 }

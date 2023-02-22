@@ -105,40 +105,7 @@ public class AdminController {
 
         //  if newElement (unbound text box) has value add it to the list
 
-        if(!newModel.equals("")) {
-            if(vehicleMake.getVehicleModelList() == null) {
-                List<VehicleModel> modelList = new ArrayList<VehicleModel>();
-                modelList.add(new VehicleModel(newModel));
-                vehicleMake.setVehicleModelList(modelList);
-            } else {
-                boolean modelExists = false;
-                for (VehicleModel modelX : vehicleMake.getVehicleModelList()) {
-                    if (modelX.getName().equals(newModel)) {
-                        modelExists = true;
-                        break;
-                    }
-                }
-                if (!modelExists) {
-                    vehicleMake.getVehicleModelList().add(new VehicleModel(newModel));
-                }
-            }
-        }
-
-        //  iterate through the list of elements
-        boolean isDeleted = false;
-        for (int i = 0; i < vehicleMake.getVehicleModelList().size(); i++) {
-            //check to see if element name is empty or blank
-            if(vehicleMake.getVehicleModelList().get(i).getName().equals("")){
-                //element name is blank remove it for the list
-                isDeleted = true;
-                VehicleModel deletedModel = vehicleMake.getVehicleModelList().remove(i);
-                vehicleMakeService.saveVehicleMake(vehicleMake);
-                vehicleModelService.deleteVehicleModel(deletedModel.getId());
-            }
-        }
-        if (!isDeleted){
-            vehicleMakeService.saveVehicleMake(vehicleMake);
-        }
+        vehicleMakeService.updateVehicleMake(vehicleMake, newModel);
 
         return "redirect:/admin/vehicle/modeledit/" + vehicleMake.getId();
 
@@ -151,7 +118,17 @@ public class AdminController {
 
     @RequestMapping(value = "admin/vehicle/listV", method = RequestMethod.GET)
     public String adminVehicleList(Model model){
-        model.addAttribute("vehicleList", vehicleService.listAllVehicles());
+
+        List<Vehicle> vehicleList = (List<Vehicle>) vehicleService.listAllVehicles();
+
+        for(Vehicle vehicle : vehicleList) {
+            vehicle.setVehicleModel(vehicleService.findVehicleModelByVehicleId(vehicle.getId()));
+            vehicle.setVehicleMake(vehicleService.findVehicleMakeByVehicleId(vehicle.getId()));
+        }
+
+
+
+        model.addAttribute("vehicleList", vehicleList);
 
         return "admin/vehicle/vehicle_list";
     }

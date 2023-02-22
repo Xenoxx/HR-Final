@@ -21,6 +21,11 @@ public class Vehicle {
     private Boolean sold;
     private String licensePlate;
 
+    private String vehicleModel;
+    private String vehicleMake;
+
+
+
 
     public Vehicle(){}
     public Vehicle(String vin){
@@ -102,6 +107,21 @@ public class Vehicle {
         this.licensePlate = licensePlate;
     }
 
+    public String getVehicleModel() {
+        return vehicleModel;
+    }
+
+    public void setVehicleModel(String vehicleModel) {
+        this.vehicleModel = vehicleModel;
+    }
+
+    public String getVehicleMake() {
+        return vehicleMake;
+    }
+
+    public void setVehicleMake(String vehicleMake) {
+        this.vehicleMake = vehicleMake;
+    }
 
     //endregion
 

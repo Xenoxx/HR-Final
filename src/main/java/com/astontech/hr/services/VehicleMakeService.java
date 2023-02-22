@@ -16,4 +16,7 @@ public interface VehicleMakeService {
 
     VehicleMake findVehicleMakeByName(String name);
 
-}
+    public VehicleMake updateVehicleMake(VehicleMake vehicleMake, String newModel);
+
+
+    }
